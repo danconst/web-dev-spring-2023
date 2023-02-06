@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar Example</title>
+    <style>
+        *{
+            box-sizing: border-box
+        }
+
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: lightgreen;
+        }
+        nav{
+            background-color: green;
+            display:flex;
+            flex-direction: row;
+        }
+
+        nav > div:hover, nav > div:focus-within{
+            background-color: greenyellow;
+            position: relative;
+        }
+
+        nav > div > div{
+            width: 100%;
+            background-color: greenyellow;
+            position: absolute;
+            display: none;
+            flex-direction: column;
+        }
+        nav > div:hover > div, nav > div:focus-within > div{
+            display: flex;
+        }
+
+        nav input {
+            position: absolute;
+            top: -1000px;
+        }
+        nav a {
+            text-decoration: none;
+        }
+        h2, label {
+            margin: 0;
+            padding: 5px;
+            min-width: 100px;
+            display: block;
+            font-size: large;
+        }
+        .container{
+            max-width: 1250px;
+            margin: 0 auto;
+        }
+        .boxone{
+            background-color: white;
+            border-left: 5px solid green;
+            padding: 20px;
+            margin: 25px;;
+        }
+        .boxtwo{
+            background-color: white;
+            border-left: 5px solid yellow;
+            padding: 20px;
+            margin: 25px;;
+        }
+        
+    </style>
+    <body>
+        <nav>
+            <div>
+                <h2>File</h2>
+                <div>
+                    <a href>New</a>
+                    <a href>Open</a>
+                    <a href>Save</a>
+                    <a href>Print</a>
+                    <a href>Close</a>
+                </div>
+            </div>
+            <div>
+                <label>
+                    <input>
+                    Edit
+                </label>
+                <div>
+                    <a href>Undo</a>
+                    <a href>Redo</a>
+                    <a href>Cut</a>
+                    <a href>Copy</a>
+                    <a href>Paste</a>
+                    <a href>Delete</a>
+                    <a href>Select All</a>
+                </div>
+            </div>
+
+            <div>
+                <h2>View</h2>
+                <div>
+                    <a href>Zoom In</a>
+                    <a href>Zoom Out</a>
+                    <a href>Actual Size</a>
+                    <a href>Fit Page</a>
+                    <a href>Fit Height</a>
+                    <a href>Rotate Left</a>
+                    <a href>Rotate Right</a>
+                    <a href>Full Screen</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class = "container">
+            <div class = "boxone">
+                <h3>Instructions</h3>
+                <p>Recreate this page using <i><b>only CSS.</b></i> Do yourself a favor and 1) Do not view the 
+                    source. Figure it out youself. 2) Do not search for the solution. Learn CSS until you know enough to do this.</p>
+                
+            </div>
+
+            <div class = "boxtwo">
+                <h3>Extra Credit</h3>
+                <p>Notice how the Edit Menu (besides for not being bold) react to clicks. If you click the edit menu, it remains open until you click somewhere else. 
+                (This you might need to search for).</p>
+            </div>
+        </div>
+    </body>
+
+</html>
