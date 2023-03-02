@@ -1,5 +1,16 @@
 <script setup lang="ts">
-    const isMenuActive = false;
+    import { ref } from 'vue';
+    import {RouterLink} from 'vue-router';
+    import type LoginBadgeVue from './LoginBadge.vue';
+
+
+    let isMenuActive = ref(false);
+    function toggleMenu() {
+        isMenuActive.value = !isMenuActive.value;
+        console.log({isMenuActive})
+    }
+
+
 </script>
 
 <template>
@@ -22,6 +33,7 @@
           <div class="navbar-start">
             <RouterLink to="/" class="navbar-item" >Home</RouterLink>
             <RouterLink to="/about" class="navbar-item" >About</RouterLink>
+            <LoginBadgeVue />
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link" href="https://bulma.io/documentation/overview/start/">
                 Docs
@@ -52,8 +64,8 @@
               </div>
             </div>
           </div>
-      
-          <div class="navbar-end">
+        
+            <LoginBadge />
             <div class="navbar-item">
               <div class="field is-grouped">
                 <p class="control">
@@ -76,7 +88,6 @@
                 </p>
               </div>
             </div>
-          </div>
         </div>
       </nav>
 </template>
