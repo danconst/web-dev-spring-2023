@@ -1,28 +1,24 @@
 <script setup lang="ts">
-    import { ref } from 'vue';
-    import {RouterLink} from 'vue-router';
-    import type LoginBadgeVue from './LoginBadge.vue';
-
-
-    let isMenuActive = ref(false);
+import { ref } from 'vue';
+import { RouterLink } from 'vue-router';
+import LoginBadge from './LoginBadge.vue';
+    const isMenuActive = ref(false);
     function toggleMenu() {
         isMenuActive.value = !isMenuActive.value;
-        console.log({isMenuActive})
+        console.log({ isMenuActive });
     }
-
-
 </script>
 
 <template>
-    
-   <nav class="navbar is-primary">
+    <nav class="navbar is-primary">
+        <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item" href="https://bulma.io">
             
-              <img src="@/assets/logo.svg" alt="" width="112" height="28">
+            <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="22" height="22" />
             
           </a>
-          <div class="navbar-burger" :class="{ 'is-active': isMenuActive }" @click="isMenuActive = !isMenuActive" >
+          <div class="navbar-burger" :class="{ 'is-active': isMenuActive }" @click="toggleMenu" >
             <span></span>
             <span></span>
             <span></span>
@@ -31,9 +27,12 @@
       
         <div class="navbar-menu" :class="{ 'is-active': isMenuActive }">
           <div class="navbar-start">
-            <RouterLink to="/" class="navbar-item" >Home</RouterLink>
-            <RouterLink to="/about" class="navbar-item" >About</RouterLink>
-            <LoginBadgeVue />
+
+            <RouterLink to="/" class="navbar-item">Home</RouterLink>
+            <RouterLink to="/about" class="navbar-item">About</RouterLink>
+            <RouterLink to="/products" class="navbar-item">Products</RouterLink>
+
+
             <div class="navbar-item has-dropdown is-hoverable">
               <a class="navbar-link" href="https://bulma.io/documentation/overview/start/">
                 Docs
@@ -64,8 +63,11 @@
               </div>
             </div>
           </div>
-        
+      
+          <div class="navbar-end">
+
             <LoginBadge />
+
             <div class="navbar-item">
               <div class="field is-grouped">
                 <p class="control">
@@ -88,6 +90,12 @@
                 </p>
               </div>
             </div>
+          </div>
         </div>
+    </div>
       </nav>
 </template>
+
+
+<style scoped>
+</style>
