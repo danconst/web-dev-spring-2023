@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import NavBar from './components/NavBar.vue'
+import Flyout from './components/Flyout.vue';
 
 
 const obj:any = {
@@ -12,4 +13,7 @@ const obj:any = {
 <template>
   <NavBar />
   <RouterView />
+  <Flyout>
+    Flyout
+  </Flyout>
 </template>
